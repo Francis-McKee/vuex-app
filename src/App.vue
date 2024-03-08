@@ -1,24 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1> {{ $store.state.count }} </h1>
+  <br>
+  <!-- Mutations -->
+  <button @click="$store.commit('inc')"> Add </button>
+  <button @click="$store.commit('desc')"> Sub </button>
+  <br>
+  <!-- Actions -->
+  <button @click="$store.dispatch('callWithDelay')"> Add with delay </button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
+
 </script>
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: greyscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
